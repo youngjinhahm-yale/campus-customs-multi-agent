@@ -265,3 +265,20 @@ This file logs the prompts I typed to my vibe coder (Claude Code), one section p
 **What was lacking after the first:** The first reflection was about 750 words, not concise, and its takeaway was the coder's guess at my view. The coder cut it to about 380 words and marked the takeaway section for me to rewrite in my own words.
 
 ---
+
+## Problem 11: Submit to GitHub
+
+**Prompt:**
+> *(screenshot of the expected file layout and the README requirements)*
+>
+> Problem 11: Submit to Github
+>
+> Push your code to a public GitHub repository so graders can clone it. Submit the repo URL to Canvas and also put it in output/github_url.txt
+>
+> Do not push your real .env to the GitHub repo. Do include both database files under data/ (the original and your working copy) so grader can run your app easily.
+>
+> Expected file layout: screen shot
+
+**Follow-up prompt:** None needed. The coder matched the layout (added README.md and .env.example, renamed the audit file to output/audit_trail.json, embedded the screenshots in resolved_board.html), scanned the staged files for the real key, and pushed to https://github.com/youngjinhahm-yale/campus-customs-multi-agent.
+
+---
