@@ -1,0 +1,13 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+output/*.tmp
+output/*.corrupt.json
+node_modules/
+frontend/dist/
+.env.*
+!.env.example
+# local only, not part of the submission
+data.zip
+joke.txt

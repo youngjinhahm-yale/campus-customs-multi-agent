@@ -1,0 +1,79 @@
+{
+  "run": "Problem 9 full run on a freshly reset data/campus_customs_new.db (reset 2026-10-10T22:16:52Z), tickets run in order 101, 102, 103 from the React board",
+  "model": "gpt-6-luna",
+  "starting_checking_balance": 3400.0,
+  "ending_checking_balance": 160.0,
+  "ending_balance_matches_cash_accounts": true,
+  "tickets": [
+    {
+      "id": 101,
+      "type": "customer_order",
+      "final_status": "resolved",
+      "boss_outcome": "waiting_approval",
+      "run_id": "t101-a81ac060",
+      "outcome": "Tee CC-TEE-WHITE size S is out of stock (0 of 1). Bulldog Print Co was blocked by overdue invoice 501 ($840), which is the rush reprint of this exact tee, so no new PO was filed. A human paid invoice 501 to unblock the vendor (5-day lead time once it ships). The customer gets a delay note with no promised date.",
+      "agents": {
+        "boss": "Read the ticket, checked cash ($3,400) and pending requests, delegated to Inventory, Accounting and Customer Service, and recorded the call.",
+        "inventory": "check_stock: 0 on hand, shortfall 1. Identified Bulldog Print Co (apparel reprint, 5 lead days) and will_ship=false because of invoice 501. Confirmed for Accounting that a new PO isn't needed because 501 is the exact-item reprint.",
+        "accounting": "Verified invoice 501 ($840, due 2026-08-28, 3 days overdue) and filed payment request #1 for human approval.",
+        "customer_service": "Saved draft #1 to Tauhid Zaman: size S unavailable, checking timing, no date promised. Not sent.",
+        "facilities": "Not needed."
+      },
+      "delegations": ["boss->inventory", "inventory->accounting", "boss->accounting", "accounting->inventory", "boss->customer_service"],
+      "payment_requests": [1],
+      "drafts": [1],
+      "human_approvals": [
+        {"request_id": 1, "payment_id": 1, "kind": "invoice", "ref": "invoice 501", "amount": 840.0, "approved_by": "Youngjin Hahm", "approved_at": "2026-10-10T22:21:30Z", "balance_after": 2560.0}
+      ],
+      "usage": {"model_requests": 22, "tool_calls": 35, "total_tokens": 65292}
+    },
+    {
+      "id": 102,
+      "type": "rent_notice",
+      "final_status": "resolved",
+      "boss_outcome": "waiting_approval",
+      "run_id": "t102-bb70b93e",
+      "outcome": "Lease 1 confirmed: $2,400 to Elm City Properties, due 2026-09-02 (2 days away, not overdue). Rent request #2 was filed and paid after human approval. The lease's next_due moved to 2026-10-02.",
+      "agents": {
+        "boss": "Routed straight to Facilities, checked cash and pending requests, and recorded the call (approve invoice #1 first, then rent #2; both leave $160).",
+        "facilities": "get_lease: verified amount, landlord and due date from the lease record rather than the email, then handed off to Accounting.",
+        "accounting": "Confirmed no existing rent request and filed payment request #2 ($2,400) for human approval.",
+        "inventory": "Not needed.",
+        "customer_service": "Not needed."
+      },
+      "delegations": ["boss->facilities", "facilities->accounting"],
+      "payment_requests": [2],
+      "drafts": [],
+      "human_approvals": [
+        {"request_id": 2, "payment_id": 2, "kind": "rent", "ref": "lease 1", "amount": 2400.0, "approved_by": "Youngjin Hahm", "approved_at": "2026-10-10T22:21:31Z", "balance_after": 160.0}
+      ],
+      "usage": {"model_requests": 13, "tool_calls": 17, "total_tokens": 35676}
+    },
+    {
+      "id": 103,
+      "type": "price_override",
+      "final_status": "resolved",
+      "boss_outcome": "in_progress",
+      "run_id": "t103-dc4e14d4",
+      "outcome": "8 of 20 CC-HOOD-NAVY M in stock, 12 short. 20% off ($46.40) keeps a 52.59% margin, but the 12-unit restock ($264) exceeds the $160 left after requests #1 and #2, so no PO was filed. The club gets a conditional quote ($928 for 20) pending restock. No money moved.",
+      "agents": {
+        "boss": "Delegated to Inventory, Accounting and Customer Service, and recorded the call as in progress (vendor block plus cash shortfall).",
+        "inventory": "check_stock: 8 on hand, shortfall 12. Same apparel vendor, blocked by invoice 501 at the time of the run.",
+        "accounting": "get_pricing + check_margin: $58 list, $22 cost, $46.40 at 20% off, $24.40 per unit, 52.59% margin, $488 profit. Restock $264 vs $160 projected, so no PO. Re-checked the shortfall with Inventory.",
+        "customer_service": "Saved draft #2 to Yale AI Club: 8 available, 12 need a restock, conditional $46.40 per hoodie. Not sent.",
+        "facilities": "Not needed."
+      },
+      "delegations": ["boss->inventory", "boss->accounting", "accounting->inventory", "boss->customer_service"],
+      "payment_requests": [],
+      "drafts": [2],
+      "human_approvals": [],
+      "usage": {"model_requests": 20, "tool_calls": 25, "total_tokens": 60074}
+    }
+  ],
+  "cash_ledger": [
+    {"step": "start (after reset)", "change": 0.0, "balance": 3400.0},
+    {"step": "ticket 101: payment #1, invoice 501", "change": -840.0, "balance": 2560.0},
+    {"step": "ticket 102: payment #2, rent lease 1", "change": -2400.0, "balance": 160.0},
+    {"step": "ticket 103: no pay or purchase", "change": 0.0, "balance": 160.0}
+  ]
+}
