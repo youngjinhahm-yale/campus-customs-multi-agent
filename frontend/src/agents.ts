@@ -9,13 +9,14 @@ export interface AgentMeta {
 }
 
 // Each agent has its own colour, glyph, and voice line so you can tell who is
-// talking at a glance - like nameplates on desks.
+// talking at a glance - like nameplates on desks. Colours come from Yale's
+// official palette: Yale Blue plus the secondary blue, green, orange and grey.
 export const AGENTS: Record<AgentName, AgentMeta> = {
   boss: { key: 'boss', name: 'Boss', role: 'Routes tickets · makes the call', icon: '🧭', color: '#00356b' },
-  inventory: { key: 'inventory', name: 'Inventory', role: 'Stock · sizes · vendors', icon: '📦', color: '#2f7d5b' },
-  accounting: { key: 'accounting', name: 'Accounting', role: 'Cash · invoices · margins', icon: '🧾', color: '#b26b00' },
-  facilities: { key: 'facilities', name: 'Facilities', role: 'Lease · rent · landlord', icon: '🏛️', color: '#6b4c9a' },
-  customer_service: { key: 'customer_service', name: 'Customer Service', role: 'Drafts customer replies', icon: '💬', color: '#c2410c' },
+  inventory: { key: 'inventory', name: 'Inventory', role: 'Stock · sizes · vendors', icon: '📦', color: '#5f712d' },
+  accounting: { key: 'accounting', name: 'Accounting', role: 'Cash · invoices · margins', icon: '🧾', color: '#bd5319' },
+  facilities: { key: 'facilities', name: 'Facilities', role: 'Lease · rent · landlord', icon: '🏛️', color: '#7a6f66' },
+  customer_service: { key: 'customer_service', name: 'Customer Service', role: 'Drafts customer replies', icon: '💬', color: '#286dc0' },
 }
 
 export const AGENT_ORDER: AgentName[] = ['boss', 'inventory', 'accounting', 'facilities', 'customer_service']

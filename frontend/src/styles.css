@@ -1,20 +1,23 @@
-/* Campus Customs · Back Office
-   A warm paper desk: corkboard tickets on the left, the live floor in the middle,
-   the till and the signature tray on the right. */
+/* Campus Customs · Back Office, in Yale colours
+   A Yale-blue bulletin board on the left, the live floor in the middle,
+   the till and the signature tray on the right. Palette = Yale's official
+   identity: Yale Blue #00356B, secondary blues #286DC0 / #63AAFF, greys. */
 
 :root {
   --yale: #00356b;
-  --yale-2: #0a4a8f;
-  --paper: #f6f1e7;
-  --paper-2: #efe7d8;
-  --card: #fffdf8;
-  --ink: #1d2433;
-  --muted: #6b7280;
-  --line: #e2d8c6;
-  --cork: #d9c4a0;
+  --yale-2: #286dc0;
+  --yale-light: #63aaff;
+  --yale-mist: #e8eef7;
+  --paper: #f5f7fb;
+  --paper-2: #e8eef7;
+  --card: #ffffff;
+  --ink: #0f1f33;
+  --muted: #5b6573;
+  --line: #d6dfeb;
+  --cork: #00356b;
   --green: #2f7d5b;
-  --red: #b4232a;
-  --amber: #b26b00;
+  --red: #a6192e;
+  --amber: #bd5319;
   --serif: 'Libre Caslon Text', Georgia, serif;
   --sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
@@ -364,3 +367,110 @@ h1, h2, h3, h4 { margin: 0; }
 }
 .toast.ok { background: var(--green); }
 .toast.bad { background: var(--red); }
+
+/* =====================================================================
+   Yale theme
+   ===================================================================== */
+
+body {
+  background:
+    linear-gradient(180deg, rgba(0, 53, 107, 0.05), transparent 260px),
+    var(--paper);
+}
+
+/* Header: deep Yale Blue, a shield mark, the motto in small caps, and a thin
+   light-blue rule underneath - like the band on a Yale banner. */
+.topbar {
+  background: var(--yale);
+  border-bottom: 4px solid var(--yale-light);
+  padding: 16px 28px;
+}
+.brand-mark {
+  width: 46px; height: 54px; border-radius: 0;
+  background: #fff;
+  clip-path: polygon(0 0, 100% 0, 100% 58%, 50% 100%, 0 58%);
+  display: grid; place-items: center;
+}
+.brand-mark span {
+  margin-top: -10px;
+  font-family: var(--serif); font-weight: 700; font-size: 17px; color: var(--yale);
+  letter-spacing: 0.04em;
+}
+.brand .motto {
+  font-family: var(--serif); font-variant: small-caps; letter-spacing: 0.18em;
+  font-size: 12px; color: var(--yale-light); margin: 0 0 1px;
+}
+.brand h1 { font-size: 23px; }
+.brand h1 em { color: #c9dcf5; opacity: 1; }
+.ghost { border-color: rgba(255, 255, 255, 0.45); }
+
+/* Panel titles: Yale-style serif with a short blue underline. */
+.panel-head h2 { color: var(--yale); position: relative; padding-bottom: 6px; }
+.panel-head h2::after {
+  content: ''; position: absolute; left: 0; bottom: 0; width: 28px; height: 2px; background: var(--yale-2);
+}
+.stage-ticket { color: var(--muted); }
+
+/* The Board: a Yale-blue felt bulletin board with white index cards. */
+.board {
+  background:
+    radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1.6px) 0 0 / 8px 8px,
+    linear-gradient(160deg, #0a4380, var(--yale));
+  border-color: #002a55;
+}
+.board .panel-head h2 { color: #fff; }
+.board .panel-head h2::after { background: var(--yale-light); }
+.board .panel-sub, .board-hint { color: #c9dcf5; }
+.card { background-color: #fff; background-image: repeating-linear-gradient(transparent 0 23px, rgba(40, 109, 192, 0.08) 23px 24px); }
+.card.selected { outline-color: var(--yale-light); }
+.card-type { color: var(--yale); }
+.card-tags span { background: var(--yale-mist); color: var(--yale); }
+.pin { background: radial-gradient(circle at 35% 35%, #ffffff, #c9dcf5 45%, var(--yale-2) 75%); }
+.card.resolved .pin { background: radial-gradient(circle at 35% 35%, #ffffff, #c9dcf5 45%, var(--yale) 75%); }
+.status-chip { background: #fdebdc; color: #8a3a10; }
+.status-chip.resolved { background: var(--yale-mist); color: var(--yale); }
+.status-chip.live { background: #dbeafe; color: var(--yale); }
+.run-btn { background: var(--yale); }
+.run-btn:hover:not(:disabled) { background: var(--yale-2); }
+/* The RESOLVED stamp is inked in Yale Blue. */
+.stamp { color: rgba(0, 53, 107, 0.82); border-color: rgba(0, 53, 107, 0.7); }
+
+/* Roster + transcript pick up the Yale mist instead of warm paper. */
+.desk { background: var(--paper); }
+.call { border-color: color-mix(in srgb, var(--agent) 40%, white); }
+.divider.done span { color: var(--yale); }
+.floor.empty { border-color: var(--line); }
+
+/* The Till: Yale-blue register, white digits with a light-blue glow. */
+.till { background: linear-gradient(160deg, #0a4380, #001f40); }
+.till-display { background: #001a35; }
+.till-amount { color: #ffffff; text-shadow: 0 0 14px rgba(99, 170, 255, 0.6); }
+.till-bar-fill { background: var(--yale-light); }
+.till-bar-fill.over { background: #f87171; }
+.till-label { color: #9fc3ee; }
+
+/* Signature tray: vouchers on white with a Yale-blue rule, Approve in Yale Blue. */
+.voucher { background: #fff; border-color: var(--line); border-left: 4px solid var(--yale); }
+.voucher::before { display: none; }
+.voucher-top { color: var(--yale-2); }
+.voucher-amount { color: var(--yale); }
+.approve { background: var(--yale); }
+.approve:hover:not(:disabled) { background: var(--yale-2); }
+.reject { color: var(--red); }
+.signer input { color: var(--yale); border-bottom-color: var(--yale); }
+.ledger-row.approved .ledger-status { color: var(--yale-2); }
+
+.toast { background: var(--yale); }
+.toast.ok { background: var(--yale-2); }
+
+/* Footer band with the motto. */
+.footer {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;
+  margin: 0 28px 28px; padding: 14px 20px; border-radius: 12px;
+  background: var(--yale); color: #c9dcf5; font-size: 12.5px;
+  border-top: 3px solid var(--yale-light);
+}
+.footer-motto { font-family: var(--serif); font-variant: small-caps; letter-spacing: 0.22em; color: #fff; font-size: 14px; }
+
+/* Taller Yale header: keep the sticky columns clear of it. */
+.board, .side { top: 104px; }

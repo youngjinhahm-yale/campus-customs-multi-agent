@@ -209,7 +209,10 @@ This file logs the prompts I typed to my vibe coder (Claude Code), one section p
 >
 > Write output/design.md with what you chose for the dashboard look (layout, how agents read differently, how resolved tickets and cash show up) and why - including the creative choices that make it feel special and something humans would actually enjoy using.
 
-**Follow-up prompt:** None needed. The coder built the "Back Office" dashboard, fixed an events-route crash it found while testing, and wrote output/design.md.
+**Follow-up prompt:**
+> before I submit, can you change the design with emphasis of Yale?
+
+**What was lacking after the first:** The first look was a warm paper-and-cork desk that didn't say "Yale." The coder restyled it around Yale's identity: Yale Blue header with a shield mark and *Lux et Veritas*, a Yale-blue bulletin board, a Yale-blue till, agents in Yale's official secondary colours, and Handsome Dan touches. It also updated design.md and retook the resolved_board.html screenshots.
 
 ---
 

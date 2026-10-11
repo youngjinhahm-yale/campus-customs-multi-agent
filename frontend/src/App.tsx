@@ -163,8 +163,9 @@ export default function App() {
     <div className="app">
       <header className="topbar">
         <div className="brand">
-          <span className="brand-mark">CC</span>
+          <span className="brand-mark" aria-hidden><span>CC</span></span>
           <div>
+            <p className="motto">Lux et Veritas · New Haven, Connecticut</p>
             <h1>Campus Customs <em>Back Office</em></h1>
             <p>Five agents, one till, and you holding the pen.</p>
           </div>
@@ -209,6 +210,12 @@ export default function App() {
           <Outbox drafts={drafts} />
         </aside>
       </main>
+
+      <footer className="footer">
+        <span>🐶 Handsome Dan approves of human sign-off.</span>
+        <span className="footer-motto">Lux et Veritas</span>
+        <span>Campus Customs · Chapel Street, New Haven</span>
+      </footer>
 
       <div className="toasts">
         {toasts.map((t) => <div key={t.id} className={`toast ${t.tone}`}>{t.text}</div>)}

@@ -20,7 +20,7 @@ export function LiveFloor({ events, running }: Props) {
   if (events.length === 0) {
     return (
       <div className="floor empty">
-        <p className="empty-big">The floor is quiet.</p>
+        <p className="empty-big">The floor is quiet. Handsome Dan is napping. 🐶</p>
         <p>Pick a ticket on the board and press <b>Start the team</b> to watch the agents work it.</p>
       </div>
     )
