@@ -2,8 +2,6 @@
 
 This file logs the prompts I typed to my vibe coder (Claude Code), one section per problem.
 
-> **TODO before submitting:** the prompts below are logged exactly as I sent them. Problems 1–5 were pasted close to the assignment wording, so rewrite each in my own words (and keep typing new problems in my own words).
-
 ---
 
 ## Setup (before Problem 1)
