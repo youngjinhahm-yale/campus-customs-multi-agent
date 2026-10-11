@@ -149,7 +149,12 @@ This file logs the prompts I typed to my vibe coder (Claude Code), one section p
 
 **Earlier prompts for this problem:** First I shared the problem and asked "Based on that give me suggestions for that", then "I love that. based on the talk with me give me a prompt to follow problem 6". The coder suggested a plan per ticket and a prompt, and I sent the prompt above with my plan.
 
-**Follow-up prompt:** None needed. The page was built from my plan.
+**Follow-up prompts:**
+> so you follow every instructions?
+
+> follow everything I talked to you directly
+
+**What was lacking after the first:** The coder flagged that the file name and wording differed from the assignment and that the page hadn't been tested in a browser. I told it to follow my direct instructions, so it kept my file name and wording and only tested that the tabs work.
 
 ---
 
@@ -263,6 +268,10 @@ This file logs the prompts I typed to my vibe coder (Claude Code), one section p
 > Tell me what I need to do
 
 **What was lacking after the first:** The first reflection was about 750 words, not concise, and its takeaway was the coder's guess at my view. The coder cut it to about 380 words and marked the takeaway section for me to rewrite in my own words.
+
+> 1. reflection : (영어로) 개선할 수 잇는 여지가 조금 더 있을 것 같다. 에이전트를 조금 더 분산하여서 기능을 하면 더 효율적으로 할 수 있ㅇ지 않으까 생각한다
+
+**What this added:** I wrote my own takeaway in Korean, and the coder translated it into English and replaced its guessed takeaway with my words.
 
 ---
 
