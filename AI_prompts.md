@@ -128,6 +128,10 @@ This file logs the prompts I typed to my vibe coder (Claude Code), one section p
 
 **What was lacking:** The agents had only been tested offline, so `output/audit_trails.json` didn't exist yet. The coder reset the database and ran all three tickets through the team with gpt-6-luna. The result was 186 audit events, 2 pending payment requests, 3 unsent drafts, and no payments made.
 
+> when it comes to prompt, change the prompt in my own words
+
+**What was lacking:** The five agent prompts read like formal documentation, not how I'd brief my team. The coder rewrote them in my plain first-person voice, as a VP staffing a deal team, keeping every tool name, shop rule and handoff.
+
 ---
 
 ## Problem 6: Plan the three tickets
